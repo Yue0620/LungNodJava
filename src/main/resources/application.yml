@@ -1,0 +1,43 @@
+server:
+  port: 8010
+  servlet:
+    context-path: /
+  tomcat:
+    max-connections: 10000
+    connection-timeout: 10000
+
+spring:
+  datasource:
+    username: root
+    password: lncrnawiki666
+    url: jdbc:mysql://192.168.164.83:33065/lungnod_db?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
+    #    password: Ms.Ma_2021_teams_mysql_3306
+    #    url: jdbc:mysql://192.168.130.23/lncexpdb?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      # 核心修改 1: 既然服务器已有表，设为 none，禁止 Hibernate 自动执行任何 DDL 语句
+      ddl-auto: none
+    show-sql: true # 开启它，方便你在控制台看真实的 SQL 查询
+    # 核心修改 2: 强制使用 MySQL 8 方言，生成现代 SQL 语法
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+cn:
+  ngdc:
+    xss:
+      filter:
+        exclude: /images/*,/js/*,/css*
+        #添加host访问白名单，其中XXX.XXX为web部署所在机器的ip，多个ip和域名之间用逗号分割
+        host-blank-list: localhost,ngdc.cncb.ac.cn,bigd.big.ac.cn,192.168.164.19
+        #如果使用了富文本框控件，请在下面设置该控件的name属性，多个控件名称中间用逗号分割
+        rich-text-field: textName,textName2
