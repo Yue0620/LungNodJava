@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 @Data
 @AllArgsConstructor
 public class Stats {
-    private String cases;       // 病例样本
-    private String images;      // 标注图像
-    private String integrity;   // 数据完整度
+    private String samples;     // 样本数
+    private String projects;    // 项目数
+    private String datasets;    // 数据集数
 }

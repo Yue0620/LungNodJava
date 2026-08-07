@@ -21,18 +21,18 @@ public class SampleTable {
 
     // 基本信息
     private String sex;
-    private Integer birthYear;
-    private Integer age;
-    private Double bmi;
+    private String birthYear;
+    private String age;
+    private String bmi;
     private String race;
     private String ethnicity;
 
     // 生活习惯
     private String smokingStatus;
     private String secondHandSmoke;
-    private Integer smokingYears;
-    private Integer dailySmokingAmount;
-    private Integer quitSmokingYears;
+    private String smokingYears;
+    private String dailySmokingAmount;
+    private String quitSmokingYears;
     private String alcoholFreq;
     private String occExposure;
 
@@ -43,29 +43,29 @@ public class SampleTable {
     private String primarySymptoms;
 
     // 实验室指标
-    private Double cyfra21_1;
-    private Double cea;
-    private Double nse;
-    private Double crp;
-    private Double pct;
-    private Integer esr;
+    private String cyfra21_1;
+    private String cea;
+    private String nse;
+    private String crp;
+    private String pct;
+    private String esr;
     private String tbTest;
 
     // 结节影像学特征
     private String malignancyPotential;
-    private Integer noduleCount;
+    private String noduleCount;
     private String noduleCountCat;
-    private Double majorDiameter;
-    private Double minorDiameter;
+    private String majorDiameter;
+    private String minorDiameter;
     private String noduleSizeCat;
     private String noduleDensityCat;
     private String densityUniformity;
-    private Double solidRatio;
+    private String solidRatio;
     private String morphology;
     private String location;
     private String spiculation;
     private String clarity;
-    private Integer vdtDays;
+    private String vdtDays;
 
     // 设备参数
     private String deviceModel;
@@ -82,7 +82,7 @@ public class SampleTable {
     private String tissueType;
 
     // 病理基因
-    private Double invasionDepth;
+    private String invasionDepth;
     private String lymphMeta;
     private String vascularInvasion;
     private String ihcResults;
@@ -97,10 +97,16 @@ public class SampleTable {
     private String followupTime;
     private String noduleChange;
     private String survivalStatus;
-    private Integer survivalMonths;
+    private String survivalMonths;
     private String stage;
 
     // 组学特有
     private String omicsType;
     private String dataFormat;
+    
+    // 新增字段
+    private String source;
+    private String cancerType;
+    private String prjectid;
+    private String others;
 }
