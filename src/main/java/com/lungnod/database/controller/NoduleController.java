@@ -206,7 +206,7 @@ public class NoduleController {
         // 按 projectId 过滤
         if (projectId != null && !projectId.isEmpty() && !projectId.equals("undefined")) {
             result = result.stream()
-                    .filter(d -> projectId.equals(d.getProjectId()))
+                    .filter(d -> projectId.equals(d.getMyProjectId()))
                     .collect(Collectors.toList());
         }
 
@@ -237,7 +237,8 @@ public class NoduleController {
     @GetMapping("/data/projects")
     public List<String> getAllProjects() {
         return lungDataRepository.findAll().stream()
-                .map(LungData::getProjectId)
+                .map(LungData::getMyProjectId)
+                .filter(Objects::nonNull)
                 .distinct()
                 .sorted()
                 .collect(Collectors.toList());

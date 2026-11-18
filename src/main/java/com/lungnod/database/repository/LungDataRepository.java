@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface LungDataRepository extends JpaRepository<LungData, String> {
-    List<LungData> findByProjectId(String projectId);
+    List<LungData> findByMyProjectId(String myProjectId);
     List<LungData> findByOmicsType(String omicsType);
     List<LungData> findByDisease(String disease);
     List<LungData> findByTissue(String tissue);
